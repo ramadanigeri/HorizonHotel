@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HorizonHotel.Domain\HorizonHotel.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
