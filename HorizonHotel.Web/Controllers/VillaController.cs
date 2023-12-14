@@ -34,6 +34,7 @@ namespace HorizonHotel.Web.Controllers
             {
                 _db.Villas.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Villa Created successfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -61,8 +62,10 @@ namespace HorizonHotel.Web.Controllers
             {
                 _db.Villas.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Villa Updated successfully";
                 return RedirectToAction("Index");
             }
+
             return View(obj);
         }
 
@@ -85,8 +88,10 @@ namespace HorizonHotel.Web.Controllers
             {
                 _db.Villas.Remove(objFromDb);
                 _db.SaveChanges();
+                TempData["success"] = "Villa Deleted successfully";
                 return RedirectToAction("Index");
             }
+            TempData["error"] = "Villa Could Not Be Deleted";
             return View();
         }
     }
